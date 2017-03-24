@@ -16,10 +16,6 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import os
 # Setting up proxy for successfull connection with web site
-
-my_proxy = {"http": "http://apac.zscaler.philips.com:10015", "https": "https://apac.zscaler.philips.com:10015"}
-
-
 # function to list all the url of the first page of the reviews for each product (read from Excel file)
 # Make sure to change the path to the location where the input excel file is placed 
 # before calling this function
@@ -36,7 +32,7 @@ def getUrls():
 #url = "http://www.amazon.de/Philips-Luftbefeuchter-Babies-HU4801-01/product-reviews/B00N3X06CS/ref=cm_cr_pr_btm_link_1?ie=UTF8&sortBy=recent&pageNumber=1"
 
 def getsoup(url):
-    response = requests.get(url, proxies=my_proxy)
+    response = requests.get(url)
     Status_Code = response.status_code
     print(url)
     print(Status_Code)
