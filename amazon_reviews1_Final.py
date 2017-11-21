@@ -32,7 +32,7 @@ def getUrls():
 #url = "http://www.amazon.de/Philips-Luftbefeuchter-Babies-HU4801-01/product-reviews/B00N3X06CS/ref=cm_cr_pr_btm_link_1?ie=UTF8&sortBy=recent&pageNumber=1"
 
 def getsoup(url):
-    response = requests.get(url)
+    response = requests.get(url, headers={'User-Agent':'Mozilla/5.0'})
     Status_Code = response.status_code
     print(url)
     print(Status_Code)
