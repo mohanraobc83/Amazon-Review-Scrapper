@@ -47,7 +47,7 @@ def getsoup(url):
 
 def getLastPageNumber(soup):
     pageNumber = []
-    review_number = int(soup.find("span", "a-size-medium totalReviewCount").text)
+    review_number = int(soup.find("span", "a-size-medium totalReviewCount").text.replace(',', ''))
     if review_number <=10:
         lastPage = 1
     else:
